@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/inquiry', [DepartmentController::class, 'inquiry'])->name('inquiry');
+Route::post('/inquiry', [DepartmentController::class, 'send'])->name('inquiry.send');
+Route::get('/index', [DepartmentController::class, 'index'])->name('inquiry.index');
