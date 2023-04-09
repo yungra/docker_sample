@@ -21,8 +21,10 @@ class DepartmentController extends Controller
     }
 
     /**
-     * 問い合わせ情報をデータベースに保存
+     * 問い合わせ情報をデータベースに保存し、問い合わせ一覧画面にリダイレクトする
      *
+     * @param Contact $contact 保存する問い合わせ情報のモデルインスタンス
+     * @param InquiryRequest $request 問い合わせ情報のリクエスト
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function send(Contact $contact, InquiryRequest $request)
